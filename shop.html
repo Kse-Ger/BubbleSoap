@@ -8,44 +8,137 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Roboto:wght@300&display=swap"
       rel="stylesheet"
     />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <title>Bubble soap shop</title>
   </head>
   <header>
-    <nav>
-      <div class="menu">
-        <img class="logo" src="./public/R.png" />
-        <h1><a href="./home.html">Bubble Soap Shop</a></h1>
-      </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+      crossorigin="anonymous"
+    ></script>
 
-      <ul class="menu">
-        <li class="menu-item"><a href="./about.html">About</a></li>
-        <li><a href="./shop">Shop</a></li>
-      </ul>
+    <nav class="navbar fixed-top bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="./home.html">
+          <img
+            src="./public/R.png"
+            alt="Logo"
+            width="30"
+            height="24"
+            class="d-inline-block align-text-top"
+          />
+          Bubble Soap Shop
+        </a>
+        <ul class="nav nav-pills">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="./about.html"
+              >About</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./shop.html">Shop</a>
+          </li>
+        </ul>
+      </div>
     </nav>
   </header>
 
   <body>
-    <div id="shop-items" class="top-10">
-      <div class="margin-auto">
-        <img class="item" src="./public/download (1).jpg" />
+
+    <div class="container my-5 pt-3">
+      <div class="row my-3">
+        <div class="col">
+          <div class="card mx-auto" style="width: 18rem">
+            <img
+              src="./public/download.jpg"
+              class="card-img-top"
+              alt="Soap 1"
+              height="286px"
+            />
+            <div class="card-body">
+              <p class="card-text">15.00 $</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card mx-auto" style="width: 18rem">
+            <img
+              src="./public/download (1).jpg"
+              class="card-img-top"
+              alt="Soap 2"
+              height="286px"
+            />
+            <div class="card-body">
+              <p class="card-text">25.00 $</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card mx-auto" style="width: 18rem">
+            <img
+              src="./public/download (2).jpg"
+              class="card-img-top"
+              alt="Soap 3"
+              height="286px"
+            />
+            <div class="card-body">
+              <p class="card-text">17.99 $</p>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="margin-auto">
-        <img class="item" src="./public/download (2).jpg" />
-      </div>
-      <div class="margin-auto">
-        <img class="item" src="./public/download (3).jpg" />
-      </div>
-      <div class="margin-auto">
-        <img class="item" src="./public/download (4).jpg" />
-      </div>
-      <div class="margin-auto">
-        <img class="item" src="./public/download (5).jpg" />
+
+      <div class="row my-3">
+        <div class="col">
+          <div class="card mx-auto" style="width: 18rem">
+            <img
+              src="./public/download (3).jpg"
+              class="card-img-top"
+              alt="Soap 1"
+              height="286px"
+            />
+            <div class="card-body">
+              <p class="card-text">15.00 $</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card mx-auto" style="width: 18rem">
+            <img
+              src="./public/download (4).jpg"
+              class="card-img-top"
+              alt="Soap 2"
+              height="286px"
+            />
+            <div class="card-body">
+              <p class="card-text">25.00 $</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card mx-auto" style="width: 18rem">
+            <img
+              src="./public/download (5).jpg"
+              class="card-img-top"
+              alt="Soap 3"
+              height="286px"
+            />
+            <div class="card-body">
+              <p class="card-text">17.99 $</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </body>
 
-  <footer>
-    <p>@JoyBubbleSoap</p>
-    <p>Privacy Policy</p>
+  <footer class="navbar navbar-dark bg-purple">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">@JoyBubbleSoap</a>
+      <a class="navbar-brand" href="#">Privacy Policy</a>
+    </div>
   </footer>
 </html>

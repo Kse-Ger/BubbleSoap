@@ -1,6 +1,7 @@
 :root {
   --purple: #cdb4db;
   --blue: #bde0fe;
+  --dark-blue: #A2D2FF;
   --pink: #ffafcc;
 }
 
@@ -23,20 +24,6 @@ body {
 nav {
   font-family: "Montserrat", sans-serif;
   font-weight: 600;
-  background: linear-gradient(
-    0deg,
-    rgba(205, 180, 219, 0.18764592018448) 0%,
-    rgba(205, 180, 219, 1) 30%
-  );
-  display: flex;
-  flex-direction: row;
-  padding: 0.5rem 0;
-  justify-content: space-between;
-  height: 5rem;
-  position: fixed;
-  z-index: 1;
-  width: 100%;
-  top: 0;
 }
 
 li {
@@ -146,25 +133,91 @@ footer {
   font-size: 1.5rem;
 }
 
-.contact label {
-  font-family: "Montserrat", sans-serif;
-  font-size: 1rem;
-  font-weight: 600;
-  color: var(--purple);
+
+
+/*-----------------------*/
+
+.card-img-top {
+  object-fit: cover;
 }
 
-.contact input {
-  margin: 0.5rem 0 0.8rem;
-  height: 1.5rem;
-  font-size: 0.9rem;
-  font-family: "Montserrat", sans-serif;
-  color: gray;
+.carousel-inner {
+  height: 15rem;
+}
+
+.bg-purple {
+  background-color: var(--purple);
+}
+
+.nav-pills .nav-link.active {
+  color: white !important;
+  background-color: var(--purple) !important;
+}
+
+.nav-link {
+  color: var(--purple) !important;
+}
+
+.btn-primary {
+  --bs-btn-bg: var(--blue) !important;
+  --bs-btn-hover-bg: var(--dark-blue) !important;
+}
+
+.glow-on-hover {
   border: none;
-  border-bottom: 2px solid gray;
-  transition: all 0.3s ease-out;
+  outline: none;
+  color: #fff;
+  background: var(--dark-blue);
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
 }
 
-.contact input:focus-visible {
-  border-color: var(--purple);
-  outline: none;
+.glow-on-hover:before {
+  content: '';
+  background: linear-gradient(45deg, #CDB4DB, #FFC8DD, #FFAFCC, #BDE0FE, #A2D2FF);
+  position: absolute;
+  top: -2px;
+  left:-2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing 20s linear infinite;
+  opacity: 0;
+  transition: opacity .3s ease-in-out;
+  border-radius: 10px;
 }
+
+.glow-on-hover:active {
+  color: #000
+}
+
+.glow-on-hover:active:after {
+  background: transparent;
+}
+
+.glow-on-hover:hover:before {
+  opacity: 1;
+}
+
+.glow-on-hover:after {
+  z-index: -1;
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: var(--dark-blue);
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+
+@keyframes glowing {
+  0% { background-position: 0 0; }
+  50% { background-position: 400% 0; }
+  100% { background-position: 0 0; }
+}
+

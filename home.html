@@ -8,39 +8,128 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Roboto:wght@300&display=swap"
       rel="stylesheet"
     />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+      crossorigin="anonymous"
+    />
     <title>Bubble soap shop</title>
   </head>
-  <header>
-    <nav>
-      <div class="menu">
-        <img class="logo" src="./public/R.png" />
-        <h1><a>Bubble Soap Shop</a></h1>
-      </div>
 
-      <ul class="menu">
-        <li class="menu-item"><a href="./about.html">About</a></li>
-        <li><a href="./shop.html">Shop</a></li>
-      </ul>
+  <header>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+      crossorigin="anonymous"
+    ></script>
+
+    <nav class="navbar fixed-top bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="./home.html">
+          <img
+            src="./public/R.png"
+            alt="Logo"
+            width="30"
+            height="24"
+            class="d-inline-block align-text-top"
+          />
+          Bubble Soap Shop
+        </a>
+        <ul class="nav nav-pills">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="./about.html"
+              >About</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./shop.html">Shop</a>
+          </li>
+        </ul>
+      </div>
     </nav>
   </header>
 
   <body>
-    <div class="banner top-10"><h1>Unique gifts for body and soul</h1></div>
-    <div id="shop-items">
-      <div class="margin-auto">
-        <img class="item" src="./public/download (1).jpg" />
+    <div
+      id="carouselExampleSlidesOnly"
+      class="carousel slide opacity-50 mt-5"
+      data-bs-ride="carousel"
+    >
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img
+            src="./public/download (6).jpg"
+            class="d-block w-100"
+            alt="..."
+          />
+        </div>
+        <div class="carousel-item">
+          <img
+            src="./public/download (7).jpg"
+            class="d-block w-100"
+            alt="..."
+          />
+        </div>
+        <div class="carousel-item">
+          <img
+            src="./public/download (8).jpg"
+            class="d-block w-100"
+            alt="..."
+          />
+        </div>
       </div>
-      <div class="margin-auto">
-        <img class="item" src="./public/download (2).jpg" />
-      </div>
-      <div class="margin-auto">
-        <img class="item" src="./public/download (3).jpg" />
+    </div>
+
+    <div class="container my-3">
+      <div class="row">
+        <div class="col">
+          <div class="card" style="width: 18rem">
+            <img
+              src="./public/download.jpg"
+              class="card-img-top"
+              alt="Soap 1"
+              height="286px"
+            />
+            <div class="card-body">
+              <p class="card-text">15.00 $</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card" style="width: 18rem">
+            <img
+              src="./public/download (1).jpg"
+              class="card-img-top"
+              alt="Soap 2"
+            />
+            <div class="card-body">
+              <p class="card-text">25.00 $</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card" style="width: 18rem">
+            <img
+              src="./public/download (2).jpg"
+              class="card-img-top"
+              alt="Soap 3"
+            />
+            <div class="card-body">
+              <p class="card-text">17.99 $</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </body>
 
-  <footer>
-    <p>@JoyBubbleSoap</p>
-    <p>Privacy Policy</p>
+  <footer class="navbar navbar-dark bg-purple">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">@JoyBubbleSoap</a>
+      <a class="navbar-brand" href="#">Privacy Policy</a>
+    </div>
   </footer>
 </html>
