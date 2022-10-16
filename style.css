@@ -1,7 +1,7 @@
 :root {
   --purple: #cdb4db;
   --blue: #bde0fe;
-  --dark-blue: #A2D2FF;
+  --dark-blue: #a2d2ff;
   --pink: #ffafcc;
 }
 
@@ -133,8 +133,6 @@ footer {
   font-size: 1.5rem;
 }
 
-
-
 /*-----------------------*/
 
 .card-img-top {
@@ -158,11 +156,6 @@ footer {
   color: var(--purple) !important;
 }
 
-.btn-primary {
-  --bs-btn-bg: var(--blue) !important;
-  --bs-btn-hover-bg: var(--dark-blue) !important;
-}
-
 .glow-on-hover {
   border: none;
   outline: none;
@@ -175,11 +168,18 @@ footer {
 }
 
 .glow-on-hover:before {
-  content: '';
-  background: linear-gradient(45deg, #CDB4DB, #FFC8DD, #FFAFCC, #BDE0FE, #A2D2FF);
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #cdb4db,
+    #ffc8dd,
+    #ffafcc,
+    #bde0fe,
+    #a2d2ff
+  );
   position: absolute;
   top: -2px;
-  left:-2px;
+  left: -2px;
   background-size: 400%;
   z-index: -1;
   filter: blur(5px);
@@ -187,12 +187,12 @@ footer {
   height: calc(100% + 4px);
   animation: glowing 20s linear infinite;
   opacity: 0;
-  transition: opacity .3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
   border-radius: 10px;
 }
 
 .glow-on-hover:active {
-  color: #000
+  color: #000;
 }
 
 .glow-on-hover:active:after {
@@ -205,7 +205,7 @@ footer {
 
 .glow-on-hover:after {
   z-index: -1;
-  content: '';
+  content: "";
   position: absolute;
   width: 100%;
   height: 100%;
@@ -216,8 +216,24 @@ footer {
 }
 
 @keyframes glowing {
-  0% { background-position: 0 0; }
-  50% { background-position: 400% 0; }
-  100% { background-position: 0 0; }
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
 }
 
+.plus {
+  margin-left: 0.5rem;
+  bottom: 0;
+  top: 240px;
+    position: absolute;
+}
+
+.card-img-top {
+  border-bottom-left-radius: var(--bs-card-inner-border-radius);
+  border-bottom-right-radius: var(--bs-card-inner-border-radius);

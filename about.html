@@ -19,15 +19,30 @@
     <title>Bubble soap shop</title>
 
     <script>
-      document.getElementById("contact").onsubmit = function() { validateForm() };
+      document.getElementById("contact").onsubmit = function () {
+        validateForm();
+      };
       function validateForm() {
-        //alert("The form was submitted");
-        document.getElementById("liveAlertPlaceholder").innerHTML = [
-          `<div class="alert alert-danger alert-dismissible" role="alert">`,
-          `   <div>You have triggered alert</div>`,
-          '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
-          "</div>",
-        ].join("");
+        let field = ["name", "surname", "email", "message"];
+        let missingField = [];
+        for (let i = 0; i < field.length; i++) {
+          if (document.getElementById(field[i]).value == "") {
+            missingField.push(field[i]);
+          }
+        }
+        if (missingField.length > 0) {
+          document.getElementById("alert-m").innerHTML = "Missing name"
+        } else {
+          var link =
+            "mailto:veronketi@gmail.com" +
+            "?cc=" + encodeURIComponent(document.getElementById("email").value) +
+            "&subject=" +
+            encodeURIComponent("Message from "+ document.getElementById("name").value + " " + document.getElementById("surname").value) +
+            "&body=" +
+            encodeURIComponent(document.getElementById("message").value);
+          window.location.href = link;
+          alert("Message is successfully sent!");
+        }
       }
     </script>
   </head>
@@ -79,7 +94,7 @@
             <label for="name" class="form-label">Name</label>
             <input type="text" class="form-control w-50" id="name" />
           </div>
-          <div id="liveAlertPlaceholder"></div>
+          <div id="alert-m"></div>
 
           <div class="mb-3">
             <label for="surname" class="form-label">Surname</label>
@@ -101,16 +116,17 @@
           </div>
 
           <div class="mb-3">
-            <label for="message" class="form-label">Password</label>
-            <input type="password" class="form-control w-50" id="message" />
+            <label for="message" class="form-label">Message</label>
+            <input type="text" class="form-control w-50" id="message" />
           </div>
 
-          <input
+          <button
             id="liveAlertBtn"
             type="submit"
             class="glow-on-hover px-3 py-2"
           >
-        </input>
+            Submit
+          </button>
         </form>
       </div>
     </div>
