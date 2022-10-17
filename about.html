@@ -17,34 +17,6 @@
       crossorigin="anonymous"
     />
     <title>Bubble soap shop</title>
-
-    <script>
-      document.getElementById("contact").onsubmit = function () {
-        validateForm();
-      };
-      function validateForm() {
-        let field = ["name", "surname", "email", "message"];
-        let missingField = [];
-        for (let i = 0; i < field.length; i++) {
-          if (document.getElementById(field[i]).value == "") {
-            missingField.push(field[i]);
-          }
-        }
-        if (missingField.length > 0) {
-          document.getElementById("alert-m").innerHTML = "Missing name"
-        } else {
-          var link =
-            "mailto:veronketi@gmail.com" +
-            "?cc=" + encodeURIComponent(document.getElementById("email").value) +
-            "&subject=" +
-            encodeURIComponent("Message from "+ document.getElementById("name").value + " " + document.getElementById("surname").value) +
-            "&body=" +
-            encodeURIComponent(document.getElementById("message").value);
-          window.location.href = link;
-          alert("Message is successfully sent!");
-        }
-      }
-    </script>
   </head>
   <header>
     <script
@@ -80,6 +52,47 @@
   </header>
 
   <body>
+    <script>
+      window.addEventListener("load", Loaded, false);
+      function Loaded() {
+        document
+          .getElementById("contactBtn")
+          .addEventListener("click", validateForm);
+
+        function validateForm() {
+          let field = ["name", "surname", "email", "message"];
+          let missingField = [];
+          for (let i = 0; i < field.length; i++) {
+            if (document.getElementById(field[i]).value == "") {
+              missingField.push(field[i]);
+            }
+          }
+          if (missingField.length > 0) {
+            for (let i = 0; i < missingField.length; i++) {
+              document.getElementById("alert-" + missingField[i]).innerHTML =
+                "Please provide " + missingField[i];
+            }
+          } else {
+            var link =
+              "mailto:veronketi@gmail.com" +
+              "?cc=" +
+              encodeURIComponent(document.getElementById("email").value) +
+              "&subject=" +
+              encodeURIComponent(
+                "Message from " +
+                  document.getElementById("name").value +
+                  " " +
+                  document.getElementById("surname").value
+              ) +
+              "&body=" +
+              encodeURIComponent(document.getElementById("message").value);
+            window.location.href = link;
+            alert("Message is successfully sent!");
+          }
+        }
+      }
+    </script>
+
     <div class="mt-5 pt-3 about">
       <h3>
         On our page are collected unusual gifts from soap! Here you will find
@@ -90,18 +103,19 @@
         <h3>Contact us!</h3>
 
         <form name="contact" onsubmit="return validateForm()">
-          <div class="mb-3">
+          <div>
             <label for="name" class="form-label">Name</label>
             <input type="text" class="form-control w-50" id="name" />
           </div>
-          <div id="alert-m"></div>
+          <div id="alert-name" class="invalid-feedback mb-3"></div>
 
-          <div class="mb-3">
+          <div>
             <label for="surname" class="form-label">Surname</label>
             <input type="text" class="form-control w-50" id="surname" />
           </div>
+          <div id="alert-surname" class="invalid-feedback mb-3"></div>
 
-          <div class="mb-3">
+          <div>
             <label for="email" class="form-label">Email address</label>
             <input
               type="email"
@@ -114,17 +128,15 @@
               We'll never share your email with anyone else.
             </div>
           </div>
+          <div id="alert-email" class="invalid-feedback mb-3"></div>
 
           <div class="mb-3">
             <label for="message" class="form-label">Message</label>
             <input type="text" class="form-control w-50" id="message" />
           </div>
+          <div id="alert-message" class="invalid-feedback mb-3"></div>
 
-          <button
-            id="liveAlertBtn"
-            type="submit"
-            class="glow-on-hover px-3 py-2"
-          >
+          <button id="contactBtn" type="button" class="glow-on-hover px-3 py-2">
             Submit
           </button>
         </form>

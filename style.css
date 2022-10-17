@@ -231,9 +231,21 @@ footer {
   margin-left: 0.5rem;
   bottom: 0;
   top: 240px;
-    position: absolute;
+  position: absolute;
 }
 
 .card-img-top {
   border-bottom-left-radius: var(--bs-card-inner-border-radius);
   border-bottom-right-radius: var(--bs-card-inner-border-radius);
+}
+
+.invalid-feedback {
+  display: block !important;
+}
+
+.bottom {
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1030;
+}
