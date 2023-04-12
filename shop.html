@@ -52,6 +52,16 @@
   </header>
 
   <body>
+
+    <script>
+      window.addEventListener("load", Loaded, false);
+      function Loaded() {
+        document
+          .getElementById("contactBtn")
+          .addEventListener("click", validateForm);
+      }
+    </script>
+
     <div class="container my-5 pt-3">
       <div class="row my-3">
         <div class="col">
@@ -81,8 +91,9 @@
                 class="collapse"
                 id="collapseExample"
               >
-                <div class="card-body">
-                  <p class="card-text">15.00 $</p>
+                <div class="card-body d-flex justify-content-between">
+                  <p class="card-text" id="price1">15.00 $</p>
+                  <button class="btn btn-success" type="button" id="add1">Add to cart</button>
                 </div>
               </div>
             </div>
@@ -115,8 +126,9 @@
                 class="collapse"
                 id="collapseExample1"
               >
-                <div class="card-body">
+                <div class="card-body d-flex justify-content-between">
                   <p class="card-text">25.00 $</p>
+                  <button class="btn btn-success" type="button">Add to cart</button>
                 </div>
               </div>
             </div>
@@ -148,8 +160,9 @@
                 class="collapse"
                 id="collapseExample2"
               >
-                <div class="card-body">
+                <div class="card-body d-flex justify-content-between">
                   <p class="card-text">17.99 $</p>
+                  <button class="btn btn-success" type="button">Add to cart</button>
                 </div>
               </div>
             </div>
@@ -184,8 +197,9 @@
                 class="collapse"
                 id="collapseExample3"
               >
-                <div class="card-body">
+                <div class="card-body d-flex justify-content-between">
                   <p class="card-text">27.30 $</p>
+                  <button class="btn btn-success" type="button">Add to cart</button>
                 </div>
               </div>
             </div>
@@ -217,8 +231,9 @@
                 class="collapse"
                 id="collapseExample4"
               >
-                <div class="card-body">
+                <div class="card-body d-flex justify-content-between">
                   <p class="card-text">25.00 $</p>
+                  <button class="btn btn-success" type="button">Add to cart</button>
                 </div>
               </div>
             </div>
@@ -250,8 +265,9 @@
                 class="collapse"
                 id="collapseExample5"
               >
-                <div class="card-body">
+                <div class="card-body d-flex justify-content-between d-flex justify-content-between">
                   <p class="card-text">15.00 $</p>
+                  <button class="btn btn-success" type="button" id="add">Add to cart</button>
                 </div>
               </div>
             </div>
